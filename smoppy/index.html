@@ -3,13 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smoppy — Smart Shopping mit KI | justfornik</title>
+  <title>Smoppy — Nie mehr planlos einkaufen | justfornik</title>
   <meta name="description" content="Smoppy — die smarte Einkaufsliste mit KI-Kategorisierung. Gemeinsam einkaufen, auf allen Geräten. Kostenlos.">
-  <meta property="og:title" content="Smoppy — Smart Shopping mit KI">
+  <meta property="og:title" content="Smoppy — Nie mehr planlos einkaufen">
   <meta property="og:description" content="Deine Einkaufsliste, automatisch per KI sortiert. Gemeinsam einkaufen, auf allen Geräten.">
   <meta property="og:image" content="/assets/einkaufsliste-icon.png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" href="/assets/einkaufsliste-icon.png" type="image/png">
+  <style>
+    /* ─── iPhone 16 Pro Max Mockup ─── */
+    .feature-row {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .feature-row:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .feature-row-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .feature-row-text .feature-icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .feature-row-text h3 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .feature-row-text p {
+      font-size: 16px;
+      color: var(--color-gray-500);
+      line-height: 1.7;
+      max-width: 420px;
+    }
+
+    .feature-row-phone {
+      flex-shrink: 0;
+    }
+
+    /* iPhone Mockup Frame */
+    .iphone-mockup {
+      position: relative;
+      width: 260px;
+      height: 532px;
+      background: #1a1a1a;
+      border-radius: 40px;
+      padding: 12px;
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.06),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .iphone-mockup::before {
+      /* Dynamic Island */
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 28px;
+      background: #1a1a1a;
+      border-radius: 20px;
+      z-index: 2;
+    }
+
+    .iphone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .iphone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    /* Features section override for rows layout */
+    .features-rows {
+      padding: 20px 0 40px;
+      background: var(--color-gray-50);
+    }
+
+    .features-rows .features-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0;
+      padding: 40px 24px 0;
+    }
+
+    .feature-row + .feature-row {
+      border-top: 1px solid var(--color-gray-200);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .feature-row,
+      .feature-row:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+        padding: 48px 24px;
+      }
+
+      .feature-row-text p {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .iphone-mockup {
+        width: 220px;
+        height: 450px;
+        border-radius: 34px;
+        padding: 10px;
+      }
+
+      .iphone-mockup::before {
+        width: 76px;
+        height: 24px;
+        top: 12px;
+      }
+
+      .iphone-screen {
+        border-radius: 25px;
+      }
+
+      .features-rows .features-title {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -28,14 +170,12 @@
   <section class="app-hero">
     <img src="/assets/einkaufsliste-icon.png" alt="Smoppy" class="app-hero-icon">
     <h1>Smoppy</h1>
-    <p class="app-hero-tagline">Smart Shopping mit KI. Deine Einkaufsliste, automatisch sortiert. Gemeinsam einkaufen, auf allen Geräten.</p>
+    <p class="app-hero-tagline">Nie mehr planlos einkaufen. Deine Einkaufsliste, automatisch per KI sortiert. Gemeinsam einkaufen, auf allen Geräten.</p>
     <div class="store-buttons">
-      <!-- App Store link — placeholder until live -->
       <a href="https://apps.apple.com" class="store-btn store-btn--primary">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
         App Store
       </a>
-      <!-- Play Store link — placeholder until live -->
       <a href="https://play.google.com" class="store-btn store-btn--primary">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302L15.396 12l2.302-2.492zM5.864 3.458L16.8 9.79l-2.302 2.302L5.864 3.458z"/></svg>
         Google Play
@@ -43,48 +183,106 @@
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="features">
-    <h2 class="features-title">Was macht sie smart?</h2>
-    <div class="features-grid">
+  <!-- Features with iPhone Mockups -->
+  <section class="features-rows">
+    <h2 class="features-title">Was macht Smoppy smart?</h2>
 
-      <div class="feature-card">
+    <!-- 1: KI-Kategorisierung -->
+    <div class="feature-row">
+      <div class="feature-row-text">
         <div class="feature-icon">&#x1F916;</div>
         <h3>KI-Kategorisierung</h3>
         <p>Artikel werden automatisch in Kategorien wie Obst, Milchprodukte oder Haushalt sortiert. Kein manuelles Zuordnen mehr.</p>
       </div>
+      <div class="feature-row-phone">
+        <div class="iphone-mockup">
+          <div class="iphone-screen">
+            <img src="screenshots/KI-Kategorien.png" alt="KI-Kategorisierung in Smoppy" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="feature-card">
+    <!-- 2: Gemeinsam einkaufen -->
+    <div class="feature-row">
+      <div class="feature-row-text">
         <div class="feature-icon">&#x1F46B;</div>
         <h3>Gemeinsam einkaufen</h3>
         <p>Teile deine Liste per Code mit Familie oder Freunden. Alle sehen in Echtzeit was noch fehlt.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">&#x1F4F1;</div>
-        <h3>Auf allen Geräten</h3>
-        <p>Verfügbar für iOS und Android. Deine Liste ist immer dabei und synchron.</p>
+      <div class="feature-row-phone">
+        <div class="iphone-mockup">
+          <div class="iphone-screen">
+            <img src="screenshots/Teilen.png" alt="Liste teilen in Smoppy" loading="lazy">
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="feature-card">
-        <div class="feature-icon">&#x26A1;</div>
-        <h3>Blitzschnell &amp; Offline</h3>
-        <p>Die App startet sofort und funktioniert auch ohne Internet. Daten werden automatisch synchronisiert.</p>
+    <!-- 3: Smarte Vorschläge -->
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <div class="feature-icon">&#x1F4A1;</div>
+        <h3>Smarte Vorschläge</h3>
+        <p>Basierend auf deinen letzten Einkäufen schlägt Smoppy dir automatisch Artikel vor. Ein Tipp und der Artikel ist auf der Liste.</p>
       </div>
+      <div class="feature-row-phone">
+        <div class="iphone-mockup">
+          <div class="iphone-screen">
+            <img src="screenshots/KI-Vorschläge.png" alt="Smarte Vorschläge in Smoppy" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="feature-card">
+    <!-- 4: Kaufhistorie -->
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <div class="feature-icon">&#x1F4CB;</div>
+        <h3>Kaufhistorie</h3>
+        <p>Sieh auf einen Blick was du zuletzt gekauft hast. Nie wieder vergessen was letzte Woche auf der Liste stand.</p>
+      </div>
+      <div class="feature-row-phone">
+        <div class="iphone-mockup">
+          <div class="iphone-screen">
+            <img src="screenshots/Kaufhistorie.PNG" alt="Kaufhistorie in Smoppy" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5: Notizen & Details -->
+    <div class="feature-row">
+      <div class="feature-row-text">
+        <div class="feature-icon">&#x1F4DD;</div>
+        <h3>Notizen &amp; Details</h3>
+        <p>Füge Mengen und Notizen zu jedem Artikel hinzu. So wissen alle genau was gemeint ist.</p>
+      </div>
+      <div class="feature-row-phone">
+        <div class="iphone-mockup">
+          <div class="iphone-screen">
+            <img src="screenshots/Notizen.png" alt="Notizen und Details in Smoppy" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6: Alles anpassbar -->
+    <div class="feature-row">
+      <div class="feature-row-text">
         <div class="feature-icon">&#x1F3A8;</div>
         <h3>Alles anpassbar</h3>
         <p>Kategorien umbenennen, Icons ändern, Reihenfolge per Drag &amp; Drop sortieren. Deine Liste, deine Regeln.</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">&#x1F512;</div>
-        <h3>Datenschutz first</h3>
-        <p>Deine Daten liegen auf Servern in Europa (Belgien). Kein Tracking, keine Werbung, keine Weitergabe.</p>
+      <div class="feature-row-phone">
+        <div class="iphone-mockup">
+          <div class="iphone-screen">
+            <img src="screenshots/KI-Kategorien.png" alt="Kategorien anpassen in Smoppy" loading="lazy">
+          </div>
+        </div>
       </div>
-
     </div>
+
   </section>
 
   <!-- CTA -->
